@@ -9,6 +9,7 @@ function App() {
   const [result, setResult] = useState('Heads')
   const timeRef = useRef(0);
   const coinRef = useRef();
+  
   function handleFlip() {
     const timeElapsed = timeRef.current;
     timeRef.current = timeElapsed + 1;
@@ -63,21 +64,7 @@ function App() {
     coinElem.classList.add('floating-animation')
     requestAnimationFrame(animateStop);
   }
-  
-  function getRotateYFromMatrix3d(matrixString) {
-    const values = matrixString.match(/matrix3d\(([^)]+)\)/);
 
-    if (!values) return null;
-
-    const matrix = values[1].split(',').map(parseFloat);
-
-    // The rotationY can be derived from the matrix as:
-    // angleY = Math.asin(-matrix[2]) (in radians)
-    const angleInRadians = Math.asin(-matrix[2]);
-    const angleInDegrees = angleInRadians * (180 / Math.PI);
-
-    return angleInDegrees;
-  }
   return (
     <>
       <main className='min-h-screen flex items-center justify-center'>
