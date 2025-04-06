@@ -74,8 +74,8 @@ function App() {
             <p className="instructions text-lg sm:text-2xl">Press the coin or the button to flip the coin</p>
           </div>
 
-          <div className="coin-data flex flex-col items-center justify-center gap-10">
-            <div ref={coinRef} className={"coin-image relative h-40 w-40 " + (isSpinning ? " floating-and-spin-animation " : " floating-animation")}>
+          <div className="coin-data flex flex-col items-center justify-center gap-10" onClick={() => { handleFlip(); setIsSpinning(true) }}> 
+            <div ref={coinRef} className={"coin-image relative h-40 w-40 " + (isSpinning ? " floating-and-spin-animation " : " floating-animation")} >
               <img src={tails} alt="tails" className="tail w-full absolute backface-hidden rotate-x-180" />
               <img src={heads} alt="heads" className="head w-full absolute backface-hidden rotate-x-0" />
             </div>
