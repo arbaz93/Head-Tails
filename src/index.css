@@ -1,4 +1,13 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family:'Kanit';
+  src: url(./fonts/Kanit/Kanit-Black.ttf);
+}
+@font-face {
+  font-family:'Kanit-SemiBold';
+  src: url(./fonts/Kanit/Kanit-SemiBold.ttf);
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,58 +21,134 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  --rotateOffset: 0deg;
 }
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
+  text-align: center;
 }
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: #404A65;
+  font-family: 'Kanit-SemiBold', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: centers;
+  color: #ECEDF0;
 }
-
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: 'Kanit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+
+
+  /* Custom Classes */
+.text-shadow-100 {
+  /* Heading Text Shadow */
+  text-shadow: 2px 2px 0px #35383f;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: #35383f;
+
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.box-shadow-100 {
+  /* Button Shadow */
+  box-shadow: 0px 4px 0px 0px #23649b;
+}
+
+
+
+
+/* Custom Components Styles */
+.coin-image {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.random-btn {
+  background-color: #1F6FB0;
+}
+
+
+
+
+/* Animations */
+.floating-animation {
+  animation: float 3s ease-in-out infinite;
+}
+.floating-and-spin-animation {
+  animation: floatAndSpin 1s linear infinite;
+}
+/* .floating-and-spin-animation.Heads,
+.floating-and-spin-animation.Tails {
+  animation: floatAndSpin 1s linear;
+} */
+.scale-and-spin-animation {
+  animation: scaleAndSpin 1s linear infinite;
+}
+.shadow-animation {
+  animation: shadow-animation 3s ease-in-out infinite;
+}
+
+/* Keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0)  rotateY(var(--rotateOffset));
   }
-  a:hover {
-    color: #747bff;
+  50% {
+    transform: translateY(-10px)  rotateY(var(--rotateOffset));
   }
-  button {
-    background-color: #f9f9f9;
+  100% {
+    transform: translateY(0)  rotateY(var(--rotateOffset));
   }
+}
+@keyframes floatAndSpin {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(180deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(360deg);
+  }
+}
+@keyframes scaleAndSpin {
+  0% {
+    transform: scale(1) rotateY(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotateY(180deg);
+  }
+  100% {
+    transform: scale(1) rotateY(360deg);
+  }
+}
+
+@keyframes shadow-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+:root {
+  --rotateOffset: 0deg;
+  --rotateFrom: 0deg;
+}
+
+@keyframes spinDown {
+  from {
+    transform: translateY(0) rotateY(var(--rotateFrom));
+  }
+  to {
+    transform: translateY(0) rotateY(var(--rotateOffset));
+  }
+}
+
+.spin-down {
+  animation: spinDown 0.6s ease-out forwards;
 }

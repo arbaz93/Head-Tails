@@ -21,12 +21,12 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: 'icons/react_192x192.png',
+            src: 'icons/icon_192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'icons/react_512x512.png',
+            src: 'icons/icon_512x512.png',
             sizes: '512x512',
             type: 'image/png'
           }
