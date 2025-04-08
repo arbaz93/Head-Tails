@@ -84,8 +84,8 @@ function App() {
             </div>
           </div>
           <div className="action">
-            <h2 className="current-face text-lg sm:text-2xl mb-16">{result}</h2>
-            <button className='random-btn text-md sm:text-xl box-shadow-100 w-40 px-2 py-2 rounded-lg cursor-pointer' onClick={() => { handleFlip(); setIsSpinning(true) }}>RANDOM</button>
+            <h2 className="current-face text-lg sm:text-2xl mb-16" for='random-btn'>{result}</h2>
+            <button title='flip the coin' id='random-btn' className='random-btn text-md sm:text-xl box-shadow-100 w-40 px-2 py-2 rounded-lg cursor-pointer' onClick={() => { handleFlip(); setIsSpinning(true) }}>RANDOM</button>
           </div>
         </div>
       </main>
