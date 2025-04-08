@@ -1,25 +1,16 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family:'Kanit';
-  src: url(./fonts/Kanit/Kanit-Black.ttf);
-}
+
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
-  font-weight: 400;
-  src: local('Kanit-Black'), local('Kanit-Black'),
-    url(./fonts/Kanit/Kanit-Black.ttf)
-      format('ttf');
+  src: local('Kanit-Black'), url(./fonts/Kanit/Kanit-Black.ttf), format('ttf');
   font-display: swap;
 }
 @font-face {
   font-family: 'Kanit-SemiBold';
   font-style: normal;
-  font-weight: 400;
-  src: local('Kanit-SemiBold'), local('Kanit-SemiBold'),
-    url(./fonts/Kanit/Kanit-SemiBold.ttf)
-      format('ttf');
+  src: local('Kanit-SemiBold'), url(./fonts/Kanit/Kanit-SemiBold.ttf), format('ttf');
   font-display: swap;
 }
 
