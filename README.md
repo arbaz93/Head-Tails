@@ -2,7 +2,7 @@
 
 A simple, elegant coin flipping web app built with **React**, **Tailwind CSS**, and **Vite**. Designed as part of a **DevChallenges.io** project, this app offers a smooth, responsive experience with **Progressive Web App (PWA)** support powered by Vite PWA.
 
-![Flip the Coin Preview](./design/Desktop_1350)
+![Flip the Coin Preview](./design/Desktop_1350.jpg)
 
 ## 🚀 Demo
 
